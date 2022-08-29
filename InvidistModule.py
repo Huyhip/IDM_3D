@@ -38,20 +38,20 @@ def pointValue_out(x,y,z,power,xv,yv,zv,values):
 def invDist_in(xv,yv,zv,values,zi,xsize=100,ysize=100,power=1):
     xi = np.linspace(0,xsize-1 , xsize)
     yi = np.linspace(0,ysize-1, ysize)
-    valuesGrid = np.zeros((xsize,ysize))
-    for x in range(0,xsize):
-        for y in range(0,ysize):
-            valuesGrid[x][y] = pointValue_in(xi[x],yi[y],zi,power,xv,yv,zv,values)
+    valuesGrid = np.zeros((ysize,xsize))
+    for y in range(0,ysize):
+        for x in range(0,xsize):
+            valuesGrid[y][x] = pointValue_in(xi[x],yi[y],zi,power,xv,yv,zv,values)
     return valuesGrid
 
 
 def invDist_out(xv,yv,zv,values,zi,xsize=100,ysize=100,power=1):
     xi = np.linspace(0,xsize-1 , xsize)
     yi = np.linspace(0,ysize-1, ysize)
-    valuesGrid = np.zeros((xsize,ysize))
-    for x in range(0,xsize):
-        for y in range(0,ysize):
-            valuesGrid[x][y] = pointValue_out(xi[x],yi[y],zi,power,xv,yv,zv,values)
+    valuesGrid = np.zeros((ysize,xsize))
+    for y in range(0,ysize):
+        for x in range(0,xsize):
+            valuesGrid[y][x] = pointValue_out(xi[x],yi[y],zi,power,xv,yv,zv,values)
     return valuesGrid
 
 def NormalizeData(data,max_col):
